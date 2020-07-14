@@ -1,6 +1,15 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Button, View } from 'react-native';
 
-const Dashboard: React.FC = () => <View />;
+import { useAuth } from '../../hooks/auth';
+
+const Dashboard: React.FC = () => {
+  const { signOut } = useAuth();
+  return (
+    <View>
+      <Button title="Sair" onPress={signOut} />
+    </View>
+  );
+};
 
 export default Dashboard;
